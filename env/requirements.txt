@@ -1,0 +1,6 @@
+seaborn==0.13.1
+scikit-image==0.22.0
+tensorboard==2.15.1
+mlflow==2.9.2
+wandb==0.16.2
+mmpretrain==1.2.0
