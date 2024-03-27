@@ -1,7 +1,7 @@
 FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu20.04
 
 # Set environment variables
-ENV PYTHON_VERSION 3.11.6
+ENV PYTHON_VERSION=3.11.6
 
 # Install necessary packages
 ARG DEBIAN_FRONTEND=noninteractive
