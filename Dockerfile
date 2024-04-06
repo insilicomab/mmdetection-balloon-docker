@@ -22,7 +22,7 @@ ENV PYTHON_ROOT=$HOME/local/python-$PYTHON_VERSION
 ENV PATH=$PYTHON_ROOT/bin:$PATH
 ENV PYENV_ROOT=$HOME/.pyenv
 RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
     git \
     make \
     build-essential \
@@ -39,7 +39,8 @@ RUN apt-get update && apt-get upgrade -y \
     xz-utils \
     tk-dev \
     libffi-dev \
-    liblzma-dev
+    liblzma-dev \
+    && rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT \
     && $PYENV_ROOT/plugins/python-build/install.sh \
     && /usr/local/bin/python-build -v $PYTHON_VERSION $PYTHON_ROOT \
